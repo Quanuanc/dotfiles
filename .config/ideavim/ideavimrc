@@ -1,0 +1,50 @@
+""" leader ---------------------------------
+let mapleader = " "
+
+""" set --------------------------------
+set surround
+set keep-english-in-normal
+set idearefactormode=keep
+set NERDTree
+set so=5
+set clipboard=unnamed
+
+
+""" normal mode ----------------------------
+nnoremap <leader>c :action GotoClass<CR>
+nnoremap U :action FindUsages<CR>
+noremap R :action RenameElement<CR>
+nnoremap == :action ReformatCode<CR>
+nnoremap -- :action OptimizeImports<CR>
+nnoremap cc :action CommentByLineComment<CR>
+noremap / <ESC>:action Find<CR>
+noremap ' <ESC>:action Replace<CR>
+noremap [[ <ESC>:action MethodUp<CR>
+noremap ]] <ESC>:action MethodDown<CR>
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+
+""" visual mode -----------------------------
+vnoremap cc :action CommentByLineComment<CR>
+" run and debug
+nnoremap ,r :action RunClass<CR>
+nnoremap ,R :action Run<CR>
+nnoremap ,d :action DebugClass<CR>
+nnoremap ,D :action Debug<CR>
+
+
+""" insert mode -----------------------------
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+""" map
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
