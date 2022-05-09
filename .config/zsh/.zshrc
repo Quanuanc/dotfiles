@@ -7,7 +7,6 @@ znap prompt
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-completions
 znap source zsh-users/zsh-autosuggestions
-znap source ptavares/zsh-sdkman
 
 # fnm init
 znap eval fnm 'fnm env --use-on-cd'
@@ -39,7 +38,8 @@ alias lg='lazygit'
 alias mount-efi='sudo diskutil mount E6D496CD-0335-35E6-9547-12084C8FAD66'
 alias ubuntu='vmrun start "/Volumes/DATA/VM/ubuntu/ubuntu.vmwarevm" nogui'
 alias freebsd='vmrun start "/Volumes/Data/VM/freebsd/FreeBSD 13.vmwarevm" nogui'
-alias dfm="git --git-dir $HOME/.dfm --work-tree=$HOME" # use git bare repo manage dotfiles
+alias dfm="git --git-dir $HOME/.dfm --work-tree=$HOME"
+alias lgdfm="lazygit --git-dir $HOME/.dfm --work-tree=$HOME"
 
 proxy() {
     subnet='255.255.255.0'
@@ -65,4 +65,18 @@ noproxy() {
     networksetup -setdhcp Ethernet
     networksetup -setdnsservers Ethernet empty
     echo "Proxy Off"
+}
+
+list-jdk() {
+	/usr/libexec/java_home -V
+}
+
+set-jdk() {
+	if [ $# != 1 ]; then
+		echo "usage example: set-jdk 1.8"
+		return 1
+	fi
+	unset JAVA_HOME
+	export JAVA_HOME=`/usr/libexec/java_home -v $1`
+	export PATH=$JAVA_HOME/bin:$PATH
 }
