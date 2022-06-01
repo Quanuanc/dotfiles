@@ -25,7 +25,7 @@ curl -s "https://get.sdkman.io?rcupdate=false" | bash
 ## 恢复 dotfiles
 1. 在 $HOME 目录克隆本仓库
 ```bash
-git clone --bare https://github.com/Quanuanc/dotfiles.git
+git clone --bare https://github.com/Quanuanc/dotfiles.git .dfm
 ```
 2. alias
 ```bash
@@ -42,5 +42,5 @@ xargs -I{} mv {} dotfiles_backup/{}
 ```
 4. 不显示未追踪文件
 ``` bash
-dfm config --local status.showUntrackedFiles
+dfm config --local status.showUntrackedFiles no
 ```
