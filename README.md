@@ -4,7 +4,6 @@
 1. znap
 2. starship
 3. fnm
-4. sdkman
 
 ## 前提步骤
 1. 安装 znap
@@ -16,10 +15,6 @@ source zsh-snap/install.zsh
 2. 安装 starship、fnm
 ```bash
 brew install starship fnm
-```
-3. 安装 sdkman
-```bash
-curl -s "https://get.sdkman.io?rcupdate=false" | bash
 ```
 
 ## 恢复 dotfiles
