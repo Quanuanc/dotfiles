@@ -10,6 +10,7 @@ znap source zsh-users/zsh-autosuggestions
 
 # fnm init
 znap eval fnm 'fnm env --use-on-cd'
+znap eval zoxide 'zoxide init zsh'
 
 # ignore duplicate history
 setopt HIST_IGNORE_DUPS
@@ -43,7 +44,7 @@ alias lgdfm="lazygit --git-dir $HOME/.dfm --work-tree=$HOME"
 
 proxy() {
     subnet='255.255.255.0'
-    router='192.168.1.11'
+    router='192.168.2.11'
     dns=$router
     if [ "$1" != "eth" ]; then
         cip=$(ipconfig getifaddr en1)
@@ -58,12 +59,14 @@ proxy() {
         echo 'Ethernet Info: '
         networksetup -getinfo Ethernet
     fi
+	sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 }
 noproxy() {
     networksetup -setdhcp Wi-Fi
     networksetup -setdnsservers Wi-Fi empty
     networksetup -setdhcp Ethernet
     networksetup -setdnsservers Ethernet empty
+	sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
     echo "Proxy Off"
 }
 

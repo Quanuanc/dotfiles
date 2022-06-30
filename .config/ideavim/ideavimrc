@@ -9,50 +9,48 @@ set scrolloff=3
 
 let mapleader = " "
 
-" enter key
-nmap <CR> o<Esc>
-nmap <S-Enter> O<Esc>
-
 " search
 set hlsearch
 set incsearch
 set smartcase
 set ignorecase
+nnoremap <ESC><ESC> :noh<CR>
 
 " easy system clipboard copy/paste
-noremap <space>y "*y
-noremap <space>Y "*Y
-noremap <space>p "*p
-noremap <space>P "*P
+noremap <leader>y "*y
+noremap <leader>Y "*Y
+noremap <leader>p "*p
+noremap <leader>P "*P
 
 " switch tab
-nmap <leader>h <action>(PreviousTab)
-nmap <leader>l <action>(NextTab)
+nmap <leader>h <Action>(PreviousTab)
+nmap <leader>l <Action>(NextTab)
+nmap <leader>q <Action>(CloseEditor)
 
 " some action
-nnoremap == :action ReformatCode<CR>
-nnoremap -- :action OptimizeImports<CR>
-nnoremap cc :action CommentByLineComment<CR>
-vnoremap cc :action CommentByLineComment<CR>
-nnoremap zc :action CollapseRegion<CR>
-nnoremap zo :action ExpandRegion<CR>
-nnoremap <leader>zc :action CollapseAllRegions<CR>
-nnoremap <leader>zo :action ExpandAllRegions<CR>
+map == <Action>(ReformatCode)
+map -- <Action>(OptimizeImports)
+map <leader>c <Action>(CommentByLineComment)
+map zc <Action>(CollapseRegion)
+map zo <Action>(ExpandRegion)
+map <leader>zc <Action>(CollapseAllRegions)
+map <leader>zo <Action>(ExpandAllRegions)
 
 
-" run and debug
-nnoremap \r :action RunClass<CR>
-nnoremap \R :action Run<CR>
-nnoremap \d :action DebugClass<CR>
-nnoremap \D :action Debug<CR>
+" run and debug, break point
+map \r <Action>(RunClass)
+map \R <Action>(Run)
+map \d <Action>(DebugClass)
+map \D <Action>(Debug)
+map \b <Action>(ToggleLineBreakpoint)
 
 
 " back and forward
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 
-" break point
-nnoremap <leader>bb :action ToggleLineBreakpoint<CR>
+" show java doc
+map gh <Action>(QuickJavaDoc)
 
 " rename
-nnoremap <leader>rr :action RenameElement<CR>
+nmap <leader>rr <Action>(RenameElement)
