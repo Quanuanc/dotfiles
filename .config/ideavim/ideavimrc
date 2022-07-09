@@ -30,7 +30,6 @@ nmap <leader>q <Action>(CloseEditor)
 " some action
 map == <Action>(ReformatCode)
 map -- <Action>(OptimizeImports)
-map <leader>c <Action>(CommentByLineComment)
 map zc <Action>(CollapseRegion)
 map zo <Action>(ExpandRegion)
 map <leader>zc <Action>(CollapseAllRegions)
@@ -40,6 +39,8 @@ map <leader>zo <Action>(ExpandAllRegions)
 " run and debug, break point
 map \r <Action>(RunClass)
 map \R <Action>(Run)
+
+
 map \d <Action>(DebugClass)
 map \D <Action>(Debug)
 map \b <Action>(ToggleLineBreakpoint)
@@ -48,6 +49,7 @@ map \b <Action>(ToggleLineBreakpoint)
 " back and forward
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
+
 
 " show java doc
 map gh <Action>(QuickJavaDoc)
