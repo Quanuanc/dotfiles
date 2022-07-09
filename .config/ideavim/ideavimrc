@@ -30,7 +30,6 @@ nmap <leader>q <Action>(CloseEditor)
 " some action
 map == <Action>(ReformatCode)
 map -- <Action>(OptimizeImports)
-map <leader>c <Action>(CommentByLineComment)
 map zc <Action>(CollapseRegion)
 map zo <Action>(ExpandRegion)
 map <leader>zc <Action>(CollapseAllRegions)
