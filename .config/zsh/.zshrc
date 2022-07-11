@@ -36,6 +36,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias lg='lazygit'
 # my alias
+alias vim=nvim
 alias mount-efi='sudo diskutil mount E6D496CD-0335-35E6-9547-12084C8FAD66'
 alias ubuntu='vmrun start "/Volumes/DATA/VM/ubuntu/ubuntu.vmwarevm" nogui'
 alias freebsd='vmrun start "/Volumes/Data/VM/freebsd/FreeBSD 13.vmwarevm" nogui'

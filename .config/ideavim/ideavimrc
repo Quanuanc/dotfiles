@@ -10,11 +10,9 @@ set scrolloff=3
 let mapleader = " "
 
 " search
-set hlsearch
 set incsearch
 set smartcase
 set ignorecase
-nnoremap <ESC><ESC> :noh<CR>
 
 " easy system clipboard copy/paste
 noremap <leader>y "*y
