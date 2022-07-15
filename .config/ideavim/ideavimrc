@@ -11,8 +11,10 @@ let mapleader = " "
 
 " search
 set incsearch
+set hlsearch
 set smartcase
 set ignorecase
+nmap <ESC><ESC> :noh<CR>
 
 " easy system clipboard copy/paste
 noremap <leader>y "*y
@@ -20,10 +22,11 @@ noremap <leader>Y "*Y
 noremap <leader>p "*p
 noremap <leader>P "*P
 
-" switch tab
+" tab
 nmap <leader>h <Action>(PreviousTab)
 nmap <leader>l <Action>(NextTab)
 nmap <leader>q <Action>(CloseEditor)
+nmap <leader>f <Action>(HideAllWindows)
 
 " some action
 map == <Action>(ReformatCode)
@@ -32,6 +35,7 @@ map zc <Action>(CollapseRegion)
 map zo <Action>(ExpandRegion)
 map <leader>zc <Action>(CollapseAllRegions)
 map <leader>zo <Action>(ExpandAllRegions)
+map <leader>s <Action>(SelectInProjectView)
 
 
 " run and debug, break point
@@ -40,6 +44,7 @@ map \R <Action>(Run)
 map \d <Action>(DebugClass)
 map \D <Action>(Debug)
 map \b <Action>(ToggleLineBreakpoint)
+map \q <Action>(Stop)
 
 
 " back and forward
