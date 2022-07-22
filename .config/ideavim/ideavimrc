@@ -36,6 +36,7 @@ map zo <Action>(ExpandRegion)
 map <leader>zc <Action>(CollapseAllRegions)
 map <leader>zo <Action>(ExpandAllRegions)
 map <leader>s <Action>(SelectInProjectView)
+map <leader>/ <Action>(Find)
 
 
 " run and debug, break point

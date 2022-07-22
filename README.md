@@ -26,7 +26,11 @@ git clone --bare https://github.com/Quanuanc/dotfiles.git .dfm
 ```bash
 alias dfm='git --git-dir=$HOME/.dfm/ --work-tree=$HOME'
 ```
-3. 恢复文件，以下命令二选一
+3. 不显示未追踪文件
+``` bash
+dfm config --local status.showUntrackedFiles no
+```
+4. 恢复文件，以下命令二选一
 ```bash
 dfm checkout
 ```
@@ -34,8 +38,4 @@ dfm checkout
 mkdir -p dotfiles_backup && \
 dfm checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
 xargs -I{} mv {} dotfiles_backup/{}
-```
-4. 不显示未追踪文件
-``` bash
-dfm config --local status.showUntrackedFiles no
 ```
